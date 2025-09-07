@@ -1,15 +1,123 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
-import Button from '../components/Button.astro';
-import Link from '../components/Link.astro';
-import { Image } from 'astro:assets';
-import thumbsup from "../assets/images/thumbsup.png";
+import { Image } from "astro:assets";
+import Polaroid from "../components/Polaroid.astro";
+import maggie from "../assets/images/mm.jpg";
+import gulv from "../assets/images/IMG_5307.jpg";
+import cafe from "../assets/images/IMG_5250.jpg";
+import Marquees from "../components/Marquees.astro";
+import Info from "../components/Info.astro";
 ---
-<MainLayout title="Titel">
-	<article>
-		<h1>Index overskrift</h1>
-		<Button>Klik!</Button>
-		<p>Link til <Link href="https://www.kea.dk" target="_blank">En anden side</Link></p>
-		<Image src={thumbsup} alt=""></Image>
-	</article>
+
+<MainLayout title="Visitkort">
+  <section>
+    <div>
+      <p class="text-2xl text-center mt-10 mx-5 md:text-6xl md:my-20">
+        Jeg ønsker <br />at skabe design, der føles TIDLØST – <br />båret af
+        enkelhed & varighed.
+      </p>
+    </div>
+  </section>
+
+  <section class="flex flex-col items-center gap-8 mx-auto md:gap-12 md:mb-650">
+    <div class="flex flex-col md:flex-row justify-center items-start gap-8">
+      <!-- Første Polaroid + linje + info -->
+      <div class="relative flex flex-col items-center">
+        <Polaroid
+          src={maggie.src}
+          alt="Malou og hund"
+          caption="(get to know me)"
+          id="gettoknowme"
+        />
+
+        <!-- Lodret linje -->
+        <div
+          class="hidden md:block absolute top-155 left-1/2 -translate-x-1/2 w-0.5 h-200 bg-[#191919]"
+        >
+        </div>
+
+        <!-- Info -->
+        <div class="hidden md:block absolute top-340 left-1/2 -translate-x-1/2">
+          <Info caption="(get to know me)">
+            <p>
+              Mit navn er Malou, jeg er 23 år gammel, og bosat på Østerbro. Til
+              daglig studerer jeg på Erhvervsakademi København hvor jeg læser
+              multimediedesign på tredje semester. En af mine helt store
+              passioner er at skabe tidsløst og værdiskabende design som bærer
+              præg af enkelthed.
+              <br /><br />
+              Når jeg hverken er i skole eller på arbejde nyder jeg at kunne bruge
+              tiden med min familie og veninder, gerne med en kop kaffe i den ene
+              hånd, og en croissant i den anden :)
+            </p>
+          </Info>
+        </div>
+      </div>
+
+      <!-- Anden Polaroid + linje + info -->
+      <div class="relative flex flex-col items-center">
+        <Polaroid
+          src={gulv.src}
+          alt="Trægulv"
+          caption="(projekter)"
+          id="projekter"
+        />
+
+        <div
+          class="hidden md:block absolute top-155 left-1/2 -translate-x-1/2 w-0.5 h-340 bg-[#191919]"
+        >
+        </div>
+
+        <div class="hidden md:block absolute top-480 left-1/2 -translate-x-1/2">
+          <Info caption="(projekter)">
+            <p>
+              Jeg var så heldig at få lov til at kode min mors hjemmeside i
+              forbindelse med, at hun gik selvstændig som coach - du finder den
+              via linket: <br />https://www.holmegaardpartner.dk/ <br />
+              <br />I forbindelse med min førstesemesterseksamen, designede og
+              kodede jeg mit eget portfolio med udgangspunkt i semestrets
+              opgaver: <br />www.maloumau.dk <br />
+              <br />På andet semester af multimediedesign fik vi stillet en
+              virksomhedscase som eksamensopgave: <br
+              />https://anotherclosett.netlify.app/
+            </p>
+          </Info>
+        </div>
+      </div>
+
+      <!-- Tredje Polaroid + linje + info -->
+      <div class="relative flex flex-col items-center">
+        <Polaroid
+          src={cafe.src}
+          alt="Cafe"
+          caption="(kontaktinformation)"
+          id="kontaktinfo"
+        />
+
+        <div
+          class="hidden md:block absolute top-155 left-1/2 -translate-x-1/2 w-0.5 h-480 bg-[#191919]"
+        >
+        </div>
+
+        <div class="hidden md:block absolute top-620 left-1/2 -translate-x-1/2">
+          <Info caption="(kontaktinformation)">
+            <p>
+              Er det lykkes mig at gøre dig mere nysgerrig på, hvem jeg er, og
+              hvordan jeg kan hjælpe dig/jer, så er du mere end velkommen til at
+              kontakte mig: <br />
+              <br />Telefon:
+              <br />40 44 41 48
+              <br />
+              <br />E-mail:
+              <br />malou.mauritzen2002@gmail.com
+            </p>
+          </Info>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <Marquees />
+  </section>
 </MainLayout>

@@ -1,5 +1,17 @@
 ---
+import malou from "../assets/images/IMG_8564_VSCO.jpeg";
+import grapes from "../assets/images/grapes.jpg";
 ---
-<div>
-Header - tilføj navigation mm.
-</div>
+
+<section class="bg-[#191919] grid grid-cols-2 md:h-screen]">
+  <div class="relative flex items-center justify-center w-full">
+    <img src={malou.src} alt="Malou" class="w-3/5 max-w-[500px] h-auto" />
+    <p class="absolute top-4 text-white text-3xl text-center md:text-5xl">
+      MALOU H. <br />MAURITZEN
+    </p>
+  </div>
+
+  <div>
+    <img src={grapes.src} alt="Vindruer" class="w-full h-full object-cover" />
+  </div>
+</section>

@@ -1,0 +1,21 @@
+---
+const { src, alt, caption } = Astro.props;
+---
+
+<article
+  class="relative bg-[#F9F7F5] border border-black grid grid-rows-3 mx-5 my-15 h-120 w-90 md:h-140 md:w-100"
+>
+  <div class="m-5 row-span-2 md:w-90">
+    <img src={src} alt={alt} />
+  </div>
+  <div class="flex flex-col items-center">
+    <div class="text-center mt-10 mb-7 grid row-start-3 md:mt-10 md:text-2xl">
+      {caption}
+    </div>
+    <div
+      class="bg-[#191919] text-white text-xs text-center py-1.5 px-13 row-start-3 hover:bg-[#F9F7F5] hover:text-black border border-black"
+    >
+      <a href="">læs mere</a>
+    </div>
+  </div>
+</article>
